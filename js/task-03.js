@@ -42,7 +42,7 @@ const images = [
 ];
 
 
-const galleryList = document.querySelector(".gallery");
+const galleryListEl = document.querySelector(".gallery");
 
 function createGalleryList(array) {
   let listItems =[];
@@ -54,4 +54,4 @@ function createGalleryList(array) {
 
 const galleryItems = createGalleryList(images);
 
-galleryList.insertAdjacentHTML("afterbegin", galleryItems.slice(',').join(''))
+galleryListEl.insertAdjacentHTML("afterbegin", galleryItems.slice(',').join(''))

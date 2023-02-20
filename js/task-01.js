@@ -19,17 +19,21 @@
     Elements: 5
 
 */
-const elements = {
-	categoryItemEl: document.querySelectorAll(".item"),
-};
 
-function logElements({ categoryItemEl }) {
-	    console.log(`Number of categories: ${categoryItemEl.length}`);
+const categoryItemEl = document.querySelectorAll(".item");
 
-	for (let el of categoryItemEl) {
+logElements(categoryItemEl);
+
+function logElements(array) {
+	    console.log(`Number of categories: ${array.length}`);
+        console.log('')//зроблено задля краси у консолі
+
+	for (let el of array) {
 		console.log(`Category: ${el.children[0].textContent}`);
 		console.log(`Elements: ${el.children[1].childElementCount}`);
+        console.log('')//зроблено задля краси у консолі
 	}
 }
 
-logElements(elements);
+
+

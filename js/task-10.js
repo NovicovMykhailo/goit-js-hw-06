@@ -37,41 +37,51 @@ const refs = {
 	create: document.querySelector("[data-create]"),
 	destroy: document.querySelector("[data-destroy]"),
 	input: document.querySelector("#controls > input"),
-  container: document.querySelector('#boxes'),
+	container: document.querySelector("#boxes"),
 };
 
+refs.input.addEventListener("input", onInputNumber);
+refs.create.addEventListener("click", onMakeBoxes);
+refs.destroy.addEventListener("click", onRemoveBoxes);
 
-refs.input.addEventListener('input', onInputNumber)
-refs.create.addEventListener('click', onMakeBoxes)
-refs.destroy.addEventListener('click', onRemoveBoxes)
-
-
-function onInputNumber(event){
-  amountOfBoxes = event.currentTarget.value
+function onInputNumber(event) {
+	amountOfBoxes = event.currentTarget.value;
 }
 
-function onMakeBoxes(){
-  const collection = createBoxes(amountOfBoxes)
-  refs.container.append(...collection)
+function onMakeBoxes() {
+	const collection = createBoxes(amountOfBoxes);
+  refs.container.append(...collection);
 }
 
-function onRemoveBoxes(){
-  refs.container.innerHTML = '';
-  refs.input.value = '';
+function onRemoveBoxes() {
+	refs.container.innerHTML = "";
+	refs.input.value = "";
+	amountOfBoxes = 0;
 }
 
-function createBoxes(amount){
-  let collection =[];
-  for(let i = 0; i < amount; i+=1){
-    let currentColor = getRandomHexColor()
+function createBoxes(amount) {
+	let collection = [];
+	for (let i = 0; i < amount; i += 1) {
+		let currentColor = getRandomHexColor();
 
-    const box = document.createElement('div')
-          box.setAttribute('style',`background-color:${currentColor}`)
-          box.style.width = `${(i*10)+30}px`
-          box.style.height = `${(i*10)+30}px`
+		const box = document.createElement("div");
+		box.setAttribute("style", `background-color:${currentColor}`);
+		box.style.width = `${i * 10 + 30}px`;
+		box.style.height = `${i * 10 + 30}px`;
 
-    collection.push(box);
+		collection.push(box);
+	}
+	return collection;
+}
+// keyboard events
+window.addEventListener("keydown", (event) => {
+  if(event.key === 'Enter'){
+    return onMakeBoxes();
   }
-  return collection
-}
+});
 
+window.addEventListener("keydown", (event) => {
+  if(event.key === 'Escape'){
+    return onRemoveBoxes();
+  }
+});

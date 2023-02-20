@@ -26,11 +26,9 @@
 
 5 Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset. */
 
-const refs = {
-	form: document.querySelector(".login-form"),
-};
+const formEl = document.querySelector(".login-form");
 
-refs.form.addEventListener("submit", onSubmit);
+formEl.addEventListener("submit", onSubmit);
 
 function onSubmit(event) {
 	event.preventDefault();
@@ -40,7 +38,8 @@ function onSubmit(event) {
 	const password = formElements.password.value;
 	// if
 	if (email === "" || password === "") {
-		window.alert("все поля должны быть заполнены");
+		window.alert("Необходимо заполнить все поля");
+		return;
 	}
 	// object
 	const formData = {
@@ -49,5 +48,6 @@ function onSubmit(event) {
 	};
 
 	console.table(formData);
-	refs.form.reset();
+	// reset form
+	formEl.reset();
 }

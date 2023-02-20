@@ -24,19 +24,15 @@
 }*/
 
 const refs = {
-	inputEl: document.querySelector("#validation-input"),
+	input: document.querySelector("#validation-input"),
 	length: document.querySelector("[data-length]").dataset.length,
 };
 
-refs.inputEl.addEventListener("blur", onInputBlur);
+refs.input.addEventListener("blur", onInputBlur);
 
 function onInputBlur(event) {
 	let inputLength = event.currentTarget.value.length;
-  
-	if (inputLength < refs.length) {
-		refs.inputEl.classList.add("invalid");
-
-	} else if (inputLength >= refs.length) {
-		refs.inputEl.classList.add("valid");
-	}
+	inputLength >= refs.length
+		? (refs.input.classList.add("valid"), refs.input.classList.remove("invalid"))
+		: (refs.input.classList.add("invalid"), refs.input.classList.remove("valid"));
 }

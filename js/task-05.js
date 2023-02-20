@@ -6,12 +6,12 @@
 <h1>Hello, <span id="name-output">Anonymous</span>!</h1> */
 
 const refs = {
-	inputEl: document.querySelector("#name-input"),
-	outputEl: document.querySelector("#name-output"),
+	input: document.querySelector("#name-input"),
+	output: document.querySelector("#name-output"),
 };
 
-refs.inputEl.addEventListener('input',onInputChange )
+refs.input.addEventListener('input',onInputChange )
 
 function onInputChange(event){
-    refs.outputEl.textContent = event.currentTarget.value
+    refs.output.textContent = event.currentTarget.value
 }

@@ -10,7 +10,7 @@
 Добавь слушатели кликов на кнопки, внутри которых увеличивай или уменьшай значение счтетчика.
 Обновляй интерфейс новым значением переменной counterValue.*/
 
-const counterEl = {
+const refs = {
 	decrement: document.querySelector('[data-action="decrement"]'),
 	increment: document.querySelector('[data-action="increment"]'),
 	value: document.querySelector("#value"),
@@ -18,5 +18,5 @@ const counterEl = {
 
 let counterValue = 0;
 
-counterEl.increment.addEventListener("click", () => (counterEl.value.textContent = counterValue += 1));
-counterEl.decrement.addEventListener("click", () => (counterEl.value.textContent = counterValue -= 1));
+refs.increment.addEventListener("click", () => (refs.value.textContent = counterValue += 1));
+refs.decrement.addEventListener("click", () => (refs.value.textContent = counterValue -= 1));

@@ -18,7 +18,7 @@ const ingredients = [
 Добавит элементу класс item.
 После чего вставит все <li> за одну операцию в список ul#ingredients.
 */
-const listOfIngredients = document.querySelector("#ingredients");
+const listOfIngredientsEl = document.querySelector("#ingredients");
 const listElementsItems = createList(ingredients);
 
 function createList(array) {
@@ -32,6 +32,6 @@ function createList(array) {
 	return elementsList;
 }
 
-listOfIngredients.append(...listElementsItems);
+listOfIngredientsEl.append(...listElementsItems);
 
 console.table(ingredients)
