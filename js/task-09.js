@@ -32,5 +32,4 @@ function onChangeColor(event){
   let colorValue = getRandomHexColor()
   refs.colorCode.textContent = colorValue
   refs.body.style.backgroundColor = colorValue
-    // refs.body.setAttribute('style', `background-color: ${colorValue}`)
 }

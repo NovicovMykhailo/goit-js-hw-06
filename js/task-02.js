@@ -33,3 +33,5 @@ function createList(array) {
 }
 
 listOfIngredients.append(...listElementsItems);
+
+console.table(ingredients)

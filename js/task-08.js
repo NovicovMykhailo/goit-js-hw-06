@@ -32,26 +32,22 @@ const refs = {
 
 refs.form.addEventListener("submit", onSubmit);
 
-
-
 function onSubmit(event) {
 	event.preventDefault();
 
 	const formElements = event.currentTarget.elements;
 	const email = formElements.email.value;
 	const password = formElements.password.value;
-
-	if (email === '' || password === '') {
+	// if
+	if (email === "" || password === "") {
 		window.alert("все поля должны быть заполнены");
 	}
-
+	// object
 	const formData = {
 		email,
 		password,
 	};
 
-  console.table(formData)
-  
-  refs.form.reset()
-	
+	console.table(formData);
+	refs.form.reset();
 }
