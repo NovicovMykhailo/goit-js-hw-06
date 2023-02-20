@@ -69,5 +69,5 @@ button {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	height: 100vw;
+	height: calc(100vh - calc(100vh - 100%));
   }
