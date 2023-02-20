@@ -22,7 +22,7 @@ button {
 	padding: 8px 12px;
 	cursor: pointer;
 }
-
+/* Gallery styles (task#3) */
 .gallery {
 	list-style: none;
 	display: flex;
@@ -51,3 +51,16 @@ button {
 	width: 100%;
 
 }
+/* Input Validation Styles (task#6) */
+
+#validation-input {
+	border: 3px solid #bdbdbd;
+  }
+  
+  #validation-input.valid {
+	border-color: #4caf50;
+  }
+  
+  #validation-input.invalid {
+	border-color: #f44336;
+  }
