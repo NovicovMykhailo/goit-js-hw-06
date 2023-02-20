@@ -1,10 +1,10 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
 /*
 В HTML есть пустой список ul#ingredients.
@@ -18,3 +18,18 @@ const ingredients = [
 Добавит элементу класс item.
 После чего вставит все <li> за одну операцию в список ul#ingredients.
 */
+const listOfIngredients = document.querySelector("#ingredients");
+const listElementsItems = createList(ingredients);
+
+function createList(array) {
+	let elementsList = [];
+	for (let item of array) {
+		const listItem = document.createElement("li");
+		listItem.classList.add("item");
+		listItem.textContent = item;
+		elementsList.push(listItem);
+	}
+	return elementsList;
+}
+
+listOfIngredients.append(...listElementsItems);
