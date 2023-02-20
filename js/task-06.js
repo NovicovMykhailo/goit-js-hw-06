@@ -22,3 +22,21 @@
 #validation-input.invalid {
   border-color: #f44336;
 }*/
+
+const refs = {
+	inputEl: document.querySelector("#validation-input"),
+	length: document.querySelector("[data-length]").dataset.length,
+};
+
+refs.inputEl.addEventListener("blur", onInputBlur);
+
+function onInputBlur(event) {
+	let inputLength = event.currentTarget.value.length;
+  
+	if (inputLength < refs.length) {
+		refs.inputEl.classList.add("invalid");
+
+	} else if (inputLength >= refs.length) {
+		refs.inputEl.classList.add("valid");
+	}
+}
